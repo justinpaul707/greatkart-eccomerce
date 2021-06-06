@@ -86,18 +86,30 @@ AUTH_USER_MODEL ='accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'justinpaul$greatkart',
-        'USER': 'justinpaul',
-        'PASSWORD': 'qwerty',
-        'HOST':'justinpaul.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
-        
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'greatkart',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST':'127.0.0.1',
+            'PORT': '3306',
+        }
     }
-}
 
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'justinpaul$greatkartecommerce',
+            'USER': 'justinpaul',
+            'PASSWORD': 'wonderful@',
+            'HOST':'justinpaul.mysql.pythonanywhere-services.com',
+            'PORT': '',
+            
+        }
+    }
 
 
 # Password validation
