@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY ='@6!f(spr1#7c*bv6d)mrup=0&eef-tn$(-bwe-s1*o1o)8%@m3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -89,9 +89,10 @@ AUTH_USER_MODEL ='accounts.Account'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'greatkart',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'justinpaul$greatkart',
+        'USER': 'justinpaul',
+        'PASSWORD': 'qwerty',
+        'HOST':'justinpaul.mysql.pythonanywhere-services.com',
         'PORT': '3306',
         
     }
@@ -137,6 +138,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR/"assets"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
